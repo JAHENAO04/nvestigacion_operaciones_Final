@@ -143,12 +143,11 @@ def analizar_cadena(
     diferencia = pi_actual - estable
     es_regular = exponente_regular is not None
     mensaje = (
-        f"La cadena es regular: P^{exponente_regular} tiene todas sus entradas positivas."
+        f"La cadena es regular y ergódica: P^{exponente_regular} tiene todas sus entradas positivas."
         if es_regular
         else (
-            "La cadena no es regular dentro del límite analizado. "
-            "Una cadena finita sí tiene al menos un estado estacionario, pero "
-            "puede no ser único y la proyección puede no converger a él."
+            "La cadena no es regular (no se garantiza que sea ergódica) dentro del límite analizado. "
+            "Puede tener un estado estacionario, pero no necesariamente único, y la proyección puede no converger a él."
         )
     )
     return ResultadoMarkov(
